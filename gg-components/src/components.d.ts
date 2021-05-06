@@ -11,20 +11,6 @@ export namespace Components {
         "isEditing": boolean;
         "item": Attribute;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
 }
 declare global {
     interface HTMLGgInlineInputElement extends Components.GgInlineInput, HTMLStencilElement {
@@ -33,39 +19,18 @@ declare global {
         prototype: HTMLGgInlineInputElement;
         new (): HTMLGgInlineInputElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLElementTagNameMap {
         "gg-inline-input": HTMLGgInlineInputElement;
-        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
     interface GgInlineInput {
         "isEditing"?: boolean;
         "item"?: Attribute;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "onSubmitAttribute"?: (event: CustomEvent<Attribute>) => void;
     }
     interface IntrinsicElements {
         "gg-inline-input": GgInlineInput;
-        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -73,7 +38,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "gg-inline-input": LocalJSX.GgInlineInput & JSXBase.HTMLAttributes<HTMLGgInlineInputElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }

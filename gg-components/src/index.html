@@ -8,9 +8,11 @@
     <script type="module" src="/build/gg-components.esm.js"></script>
     <script nomodule src="/build/gg-components.js"></script>
   </head>
-  <body>
-    <my-component first="Jim Bob" last="Bohica"></my-component>
-    <hr />
+  <body id="test">
+    <script>
+      const listener = document.querySelector('#test');
+      listener.addEventListener('submitAttribute', event => console.log({ data: event.detail }));
+    </script>
     <gg-inline-input isEditing="true" />
   </body>
 </html>

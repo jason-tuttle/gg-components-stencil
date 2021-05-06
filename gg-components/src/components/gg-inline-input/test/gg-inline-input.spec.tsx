@@ -1,5 +1,6 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { GgInlineInput } from '../gg-inline-input';
+import { expect } from 'chai';
 
 describe('gg-inline-input', () => {
   it('renders', async () => {
@@ -7,7 +8,7 @@ describe('gg-inline-input', () => {
       components: [GgInlineInput],
       html: `<gg-inline-input></gg-inline-input>`,
     });
-    expect(page.root).toEqualHtml(`
+    expect(page.root).to.have.html(`
       <gg-inline-input>
         <mock:shadow-root>
           <slot></slot>
