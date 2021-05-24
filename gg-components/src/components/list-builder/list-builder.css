@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  font-family: 'Proxima Nova', Arial, sans-serif;
+  background-color: var(--color-background);
+}
+.ds-gridTable {
+  display: block;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-background);
+}
+
+.ds-gridTable--header-condensed .ds-gridTable--item {
+  padding: var(--space-halfx);
+}
+
+.ds-gridTable--header:not(:last-child),
+.ds-gridTable--row:not(:last-child) {
+  border-bottom: 1px solid var(--color-divider);
+  margin-bottom: -1px;
+}
+
+.ds-gridTable--item {
+}

@@ -1,0 +1,19 @@
+:root {
+  --white: #ffffff;
+  --gray-xlight: #eeefef;
+  --color-background: var(--white);
+  --color-background-content: var(--gray-xlight);
+  --color-text-secondary: #9f9f9d;
+  --color-divider: var(--color-text-secondary);
+  --gridUnit: 1rem;
+  --space-halfx: calc(var(--gridUnit) / 2);
+  --space-1x: var(--gridUnit);
+  --space-1halfx: calc(var(--gridUnit) * 1.5);
+  --space-2x: calc(var(--gridUnit) * 2);
+  --space-3x: calc(var(--gridUnit) * 4);
+  --lh-medium: 1.5rem;
+}
+
+.docAttributes-builder {
+  grid-template-columns: 1fr 2fr 1fr 1fr minmax(60px, min-content);
+}

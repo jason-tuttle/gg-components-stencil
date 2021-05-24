@@ -11,6 +11,16 @@ export namespace Components {
         "isEditing": boolean;
         "item": Attribute;
     }
+    interface LbHeader {
+    }
+    interface LbHeaderItem {
+    }
+    interface LbRow {
+    }
+    interface LbRowItem {
+    }
+    interface ListBuilder {
+    }
 }
 declare global {
     interface HTMLGgInlineInputElement extends Components.GgInlineInput, HTMLStencilElement {
@@ -19,8 +29,43 @@ declare global {
         prototype: HTMLGgInlineInputElement;
         new (): HTMLGgInlineInputElement;
     };
+    interface HTMLLbHeaderElement extends Components.LbHeader, HTMLStencilElement {
+    }
+    var HTMLLbHeaderElement: {
+        prototype: HTMLLbHeaderElement;
+        new (): HTMLLbHeaderElement;
+    };
+    interface HTMLLbHeaderItemElement extends Components.LbHeaderItem, HTMLStencilElement {
+    }
+    var HTMLLbHeaderItemElement: {
+        prototype: HTMLLbHeaderItemElement;
+        new (): HTMLLbHeaderItemElement;
+    };
+    interface HTMLLbRowElement extends Components.LbRow, HTMLStencilElement {
+    }
+    var HTMLLbRowElement: {
+        prototype: HTMLLbRowElement;
+        new (): HTMLLbRowElement;
+    };
+    interface HTMLLbRowItemElement extends Components.LbRowItem, HTMLStencilElement {
+    }
+    var HTMLLbRowItemElement: {
+        prototype: HTMLLbRowItemElement;
+        new (): HTMLLbRowItemElement;
+    };
+    interface HTMLListBuilderElement extends Components.ListBuilder, HTMLStencilElement {
+    }
+    var HTMLListBuilderElement: {
+        prototype: HTMLListBuilderElement;
+        new (): HTMLListBuilderElement;
+    };
     interface HTMLElementTagNameMap {
         "gg-inline-input": HTMLGgInlineInputElement;
+        "lb-header": HTMLLbHeaderElement;
+        "lb-header-item": HTMLLbHeaderItemElement;
+        "lb-row": HTMLLbRowElement;
+        "lb-row-item": HTMLLbRowItemElement;
+        "list-builder": HTMLListBuilderElement;
     }
 }
 declare namespace LocalJSX {
@@ -29,8 +74,23 @@ declare namespace LocalJSX {
         "item"?: Attribute;
         "onSubmitAttribute"?: (event: CustomEvent<Attribute>) => void;
     }
+    interface LbHeader {
+    }
+    interface LbHeaderItem {
+    }
+    interface LbRow {
+    }
+    interface LbRowItem {
+    }
+    interface ListBuilder {
+    }
     interface IntrinsicElements {
         "gg-inline-input": GgInlineInput;
+        "lb-header": LbHeader;
+        "lb-header-item": LbHeaderItem;
+        "lb-row": LbRow;
+        "lb-row-item": LbRowItem;
+        "list-builder": ListBuilder;
     }
 }
 export { LocalJSX as JSX };
@@ -38,6 +98,11 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "gg-inline-input": LocalJSX.GgInlineInput & JSXBase.HTMLAttributes<HTMLGgInlineInputElement>;
+            "lb-header": LocalJSX.LbHeader & JSXBase.HTMLAttributes<HTMLLbHeaderElement>;
+            "lb-header-item": LocalJSX.LbHeaderItem & JSXBase.HTMLAttributes<HTMLLbHeaderItemElement>;
+            "lb-row": LocalJSX.LbRow & JSXBase.HTMLAttributes<HTMLLbRowElement>;
+            "lb-row-item": LocalJSX.LbRowItem & JSXBase.HTMLAttributes<HTMLLbRowItemElement>;
+            "list-builder": LocalJSX.ListBuilder & JSXBase.HTMLAttributes<HTMLListBuilderElement>;
         }
     }
 }

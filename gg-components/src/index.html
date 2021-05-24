@@ -7,12 +7,34 @@
 
     <script type="module" src="/build/gg-components.esm.js"></script>
     <script nomodule src="/build/gg-components.js"></script>
+    <link rel="stylesheet" href="/build/gg-components.css" />
   </head>
-  <body id="test">
+  <body id="test" style="background-color: #eeefef">
     <script>
       const listener = document.querySelector('#test');
       listener.addEventListener('submitAttribute', event => console.log({ data: event.detail }));
     </script>
-    <gg-inline-input isEditing="true" />
+    <gg-inline-input isEditing="true"></gg-inline-input>
+    <hr />
+    <list-builder>
+      <lb-header class="docAttributes-builder">
+        <lb-header-item>Header 1</lb-header-item>
+        <lb-header-item>Header 2</lb-header-item>
+        <lb-header-item>Header 3</lb-header-item>
+        <lb-header-item>Header 4</lb-header-item>
+      </lb-header>
+      <lb-row class="docAttributes-builder">
+        <lb-row-item>Content 1</lb-row-item>
+        <lb-row-item>Content 2</lb-row-item>
+        <lb-row-item>Content 3</lb-row-item>
+        <lb-row-item>Content 4</lb-row-item>
+      </lb-row>
+      <lb-row class="docAttributes-builder">
+        <lb-row-item>Content 1</lb-row-item>
+        <lb-row-item>Content 2</lb-row-item>
+        <lb-row-item>Content 3</lb-row-item>
+        <lb-row-item>Content 4</lb-row-item>
+      </lb-row>
+    </list-builder>
   </body>
 </html>

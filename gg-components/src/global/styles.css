@@ -1,0 +1,3 @@
+.docAttributes-builder {
+  grid-template-columns: 1fr 2fr 1fr 1fr minmax(60px, min-content);
+}
