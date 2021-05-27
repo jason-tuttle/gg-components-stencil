@@ -5,11 +5,11 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Attribute } from "./components/gg-inline-input/gg-inline-input";
 export namespace Components {
     interface GgInlineInput {
+        "identifier"?: string;
         "isEditing": boolean;
-        "item": Attribute;
+        "text"?: string;
     }
     interface LbHeader {
     }
@@ -70,9 +70,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface GgInlineInput {
+        "identifier"?: string;
         "isEditing"?: boolean;
-        "item"?: Attribute;
-        "onSubmitAttribute"?: (event: CustomEvent<Attribute>) => void;
+        "onSubmitAttribute"?: (event: CustomEvent<{ id: string; text: string }>) => void;
+        "text"?: string;
     }
     interface LbHeader {
     }

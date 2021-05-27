@@ -1,69 +1,68 @@
 import { Component, Element, Event, EventEmitter, Listen, Prop, State, h } from '@stencil/core';
 
-export type Attribute = {
-  displayName: string;
-  id: string;
-  lockable: boolean;
-  obsolete: boolean;
-  order: number;
-  required: boolean;
-  type: string;
-};
-
 @Component({
   tag: 'gg-inline-input',
-  styleUrl: 'gg-inline-input.css',
+  styleUrl: 'gg-inline-input.scss',
   shadow: true,
 })
 export class GgInlineInput {
   @Element() element: HTMLElement;
 
   @Prop() isEditing = false;
-  @Prop({ mutable: true }) item: Attribute = {
-    displayName: 'My First Attribute',
-    id: '1',
-    lockable: false,
-    obsolete: false,
-    order: 1,
-    required: false,
-    type: 'SINGLE_SELECT',
-  };
+  @Prop() text?: string;
+  @Prop() identifier?: string;
 
-  @State() isEditingName = false;
-  @State() editedName?: string;
+  @State() isEditingText = false;
+  @State() editedText?: string;
 
   @Listen('click', { capture: true })
   toggleEditName(): void {
-    if (!this.isEditingName) {
-      this.isEditingName = !this.isEditingName;
+    if (!this.isEditingText) {
+      this.isEditingText = !this.isEditingText;
       this.element.focus();
     }
   }
   @Listen('keydown')
   handleKeys(e: KeyboardEvent): void {
+    console.log('keydown');
     if (e.key === 'Enter') {
-      this.isEditingName = false;
-      this.item.displayName = this.editedName;
-      this.editedName = undefined;
-      this.submitAttribute.emit({ ...this.item, displayName: this.editedName });
+      this.element.blur();
+      return;
     }
     if (e.key === 'Escape') {
-      this.isEditingName = false;
+      this.isEditingText = false;
+      return;
     }
   }
-
-  handleInput(e: Event): void {
-    let target = e.target as HTMLInputElement;
-    this.editedName = target.value;
+  @Listen('focusout')
+  handleFocusout(): void {
+    // TODO: needs the ability to show invalid state
+    if (!this.isEditing) this.handleSubmit();
   }
 
-  @Event() submitAttribute: EventEmitter<Attribute>;
+  handleSubmit(): void {
+    this.isEditingText = false;
+    this.submitAttribute.emit({ id: this.identifier, text: this.editedText });
+    this.editedText = undefined;
+  }
+
+  private handleInput = (e: Event): void => {
+    let target = e.target as HTMLInputElement;
+    this.editedText = target.value;
+    console.log(this.editedText);
+  };
+
+  @Event() submitAttribute: EventEmitter<{ id: string; text: string }>;
 
   render() {
-    if (this.isEditingName) {
-      return <input type="text" value={this.editedName ?? this.item?.displayName} placeholder="Add a new attribute" onInput={e => this.handleInput(e)} />;
-    } else {
-      return <strong role="button">{this.item?.displayName ?? this.editedName}</strong>;
-    }
+    return (
+      <div class="inputInline">
+        {this.isEditingText || !this.text ? (
+          <input type="text" value={this.editedText} placeholder="Add a new attribute" onInput={this.handleInput} />
+        ) : (
+          <span role="button">{this.text ?? this.editedText}</span>
+        )}
+      </div>
+    );
   }
 }

@@ -1,0 +1,66 @@
+$inputBorderWidth: 0.125rem;
+$rowBorderWidth: 0.063rem;
+
+$inline-top-padding: $space-quarterx;
+$inline-top-margin: (-$inline-top-padding);
+
+$inline-right-padding: $space-quarterx;
+$inline-right-margin: 0;
+
+$inline-bottom-padding: $space-quarterx;
+$inline-bottom-margin: (-$inline-bottom-padding);
+
+$inline-left-padding: $space-halfx;
+$inline-left-margin: (-$inline-left-padding);
+
+.inputInline {
+  margin: $inline-top-margin $inline-right-margin $inline-bottom-margin $inline-left-margin;
+  padding-right: $space-halfx;
+  position: relative;
+
+  input[type='text'] {
+    border: none;
+    padding: $inline-top-padding $inline-right-padding $inline-bottom-padding $inline-left-padding;
+
+    &:placeholder-shown {
+      background-color: $color-background-content;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // inputInline
+  &:before {
+    content: '';
+    width: $inputBorderWidth;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  // inputInline
+  &:hover {
+    &:before {
+      background-color: $color-text-secondary;
+    }
+
+    input[type='text'] {
+      background-color: $color-background-content;
+    }
+  }
+
+  // inputInline
+  &:focus-within {
+    &:before {
+      background-color: $color-text-link;
+    }
+
+    input[type='text'] {
+      background-color: $color-background-content;
+    }
+  }
+}
