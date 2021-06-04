@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'lb-row',
@@ -8,9 +8,9 @@ import { Component, h } from '@stencil/core';
 export class LbRow {
   render() {
     return (
-      <div class="ds-gridTable--row">
+      <Host class="ds-gridTable--row">
         <slot></slot>
-      </div>
+      </Host>
     );
   }
 }

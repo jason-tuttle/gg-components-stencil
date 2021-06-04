@@ -1,4 +1,7 @@
 :host {
+  min-width: 0;
+  word-break: break-word;
+  padding: $space-1x $space-halfx;
   @extend .fontSize-tableHeading;
 
   &.condensed {
