@@ -38,7 +38,7 @@ export class GgInlineInput {
   @Listen('focusout')
   handleFocusout(): void {
     // TODO: needs the ability to show invalid state
-    if (this.isEditing) this.handleSubmit();
+    if (this.isEditing && this.editedText && this.editedText !== this.text) this.handleSubmit();
   }
 
   handleSubmit(): void {
