@@ -60,7 +60,7 @@ export class GgInlineInput {
         {this.isEditingText || !this.text ? (
           <input type="text" value={this.editedText} placeholder="Add a new attribute" onInput={this.handleInput} />
         ) : (
-          <span role="button">{this.text ?? this.editedText}</span>
+          <strong role="button">{this.text ?? this.editedText}</strong>
         )}
       </div>
     );

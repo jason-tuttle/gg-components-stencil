@@ -2,17 +2,15 @@ import { Component, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'lb-row',
-  styleUrl: 'lb-row.css',
+  styleUrl: 'lb-row.scss',
   shadow: true,
 })
 export class LbRow {
-
   render() {
     return (
-      <Host>
+      <Host class="ds-gridTable">
         <slot></slot>
       </Host>
     );
   }
-
 }

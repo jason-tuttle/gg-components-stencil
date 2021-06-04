@@ -2,7 +2,7 @@ import { Component, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'list-builder',
-  styleUrl: './list-builder.css',
+  styleUrl: './list-builder.scss',
   shadow: true,
 })
 export class ListBuilder {
