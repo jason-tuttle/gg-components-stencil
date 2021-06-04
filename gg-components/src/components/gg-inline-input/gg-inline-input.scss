@@ -18,6 +18,9 @@ $inline-left-margin: (-$inline-left-padding);
   padding-right: $space-halfx;
   position: relative;
 
+  & strong input {
+    font-weight: bold;
+  }
   input[type='text'] {
     border: none;
     padding: $inline-top-padding $inline-right-padding $inline-bottom-padding $inline-left-padding;

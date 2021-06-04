@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface GgInlineInput {
+        "bold"?: boolean;
         "identifier"?: string;
         "isEditing": boolean;
         "text"?: string;
@@ -70,6 +71,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface GgInlineInput {
+        "bold"?: boolean;
         "identifier"?: string;
         "isEditing"?: boolean;
         "onSubmitAttribute"?: (event: CustomEvent<{ id: string; text: string }>) => void;

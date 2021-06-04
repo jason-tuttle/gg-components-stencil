@@ -1,21 +1,7 @@
-.ds-gridTable {
-  background-color: $color-background;
+:host {
+  @extend .fontSize-tableHeading;
 
-  &--item {
-    min-width: 0;
-    word-break: break-word;
-    padding: $space-1x $space-halfx;
-  }
-
-  &--header {
-    .ds-gridTable--item {
-      @extend .fontSize-tableHeading;
-    }
-  }
-
-  &-condensed {
-    .ds-gridTable--item {
-      padding: $space-halfx;
-    }
+  &.condensed {
+    padding: $space-halfx;
   }
 }

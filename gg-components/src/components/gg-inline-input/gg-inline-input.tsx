@@ -8,9 +8,10 @@ import { Component, Element, Event, EventEmitter, Listen, Prop, State, h } from 
 export class GgInlineInput {
   @Element() element: HTMLElement;
 
-  @Prop() isEditing = false;
+  @Prop({ reflect: true }) isEditing = false;
   @Prop() text?: string;
   @Prop() identifier?: string;
+  @Prop() bold?: boolean;
 
   @State() isEditingText = false;
   @State() editedText?: string;
@@ -37,7 +38,7 @@ export class GgInlineInput {
   @Listen('focusout')
   handleFocusout(): void {
     // TODO: needs the ability to show invalid state
-    if (!this.isEditing) this.handleSubmit();
+    if (this.isEditing) this.handleSubmit();
   }
 
   handleSubmit(): void {
@@ -49,20 +50,23 @@ export class GgInlineInput {
   private handleInput = (e: Event): void => {
     let target = e.target as HTMLInputElement;
     this.editedText = target.value;
-    console.log(this.editedText);
   };
 
   @Event() submitAttribute: EventEmitter<{ id: string; text: string }>;
 
   render() {
-    return (
+    return this.isEditing || !this.text ? (
       <div class="inputInline">
-        {this.isEditingText || !this.text ? (
-          <input type="text" value={this.editedText} placeholder="Add a new attribute" onInput={this.handleInput} />
+        {this.bold ? (
+          <strong>
+            <input type="text" value={this.editedText || this.text} placeholder="Add a new attribute" onInput={this.handleInput} />
+          </strong>
         ) : (
-          <strong role="button">{this.text ?? this.editedText}</strong>
+          <input type="text" value={this.editedText || this.text} placeholder="Add a new attribute" onInput={this.handleInput} />
         )}
       </div>
+    ) : (
+      <span role="button">{this.text ?? this.editedText}</span>
     );
   }
 }

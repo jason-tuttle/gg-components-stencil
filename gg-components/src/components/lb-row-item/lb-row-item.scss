@@ -1,20 +1,9 @@
 :host {
   min-width: 0;
   word-break: break-word;
-  padding: var(--space-1x) var(--space-halfx);
-}
-.ds-gridTable {
-  background-color: $color-background;
+  padding: $space-1x $space-halfx;
 
-  &--item {
-    min-width: 0;
-    word-break: break-word;
-    padding: $space-1x $space-halfx;
-  }
-
-  &-condensed {
-    .ds-gridTable--item {
-      padding: $space-halfx;
-    }
+  &.condensed {
+    padding: $space-halfx;
   }
 }

@@ -14,7 +14,7 @@
       const listener = document.querySelector('#test');
       listener.addEventListener('submitAttribute', event => console.log({ data: event.detail }));
     </script>
-    <gg-inline-input isEditing="true" identifier="__NEW__" text="Bob"></gg-inline-input>
+    <h1>THIS IS A TEST</h1>
     <hr />
     <list-builder>
       <lb-header class="docAttributes-builder">
@@ -25,14 +25,29 @@
         <lb-header-item>Actions</lb-header-item>
       </lb-header>
       <lb-row class="docAttributes-builder">
-        <lb-row-item><gg-inline-input isEditing="true" identifier="__NEW__" text="Bob"></gg-inline-input></lb-row-item>
-        <lb-row-item>Content 2</lb-row-item>
+        <lb-row-item>
+          <strong><gg-inline-input is-editing="false" identifier="__NEW__12345" text="One Bob"></gg-inline-input></strong>
+        </lb-row-item>
+        <lb-row-item>This row2</lb-row-item>
+        <lb-row-item>is not editing</lb-row-item>
+        <lb-row-item>Content 4</lb-row-item>
+        <lb-row-item>Content 5</lb-row-item>
+      </lb-row>
+      <lb-row class="docAttributes-builder">
+        <lb-row-item>
+          <strong><gg-inline-input is-editing="true" identifier="__NEW__12345" text="Two Bob" bold="true"></gg-inline-input></strong>
+        </lb-row-item>
+        <lb-row-item>
+          <gg-inline-input is-editing="true" identifier="__NEW__12345" text="Non-bold Bob"></gg-inline-input>
+        </lb-row-item>
         <lb-row-item>Content 3</lb-row-item>
         <lb-row-item>Content 4</lb-row-item>
         <lb-row-item>Content 5</lb-row-item>
       </lb-row>
       <lb-row class="docAttributes-builder">
-        <lb-row-item>Content 1</lb-row-item>
+        <lb-row-item>
+          <gg-inline-input is-editing="true" identifier="__NEW__" text="" bold="true"></gg-inline-input>
+        </lb-row-item>
         <lb-row-item>Content 2</lb-row-item>
         <lb-row-item>Content 3</lb-row-item>
         <lb-row-item>Content 4</lb-row-item>

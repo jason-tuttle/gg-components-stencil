@@ -9,6 +9,7 @@
 
 | Property     | Attribute    | Description | Type      | Default     |
 | ------------ | ------------ | ----------- | --------- | ----------- |
+| `bold`       | `bold`       |             | `boolean` | `undefined` |
 | `identifier` | `identifier` |             | `string`  | `undefined` |
 | `isEditing`  | `is-editing` |             | `boolean` | `false`     |
 | `text`       | `text`       |             | `string`  | `undefined` |
