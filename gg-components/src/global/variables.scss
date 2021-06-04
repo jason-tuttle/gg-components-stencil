@@ -1,0 +1,93 @@
+// VARIABLES =============================
+// =======================================
+
+// BASE COLORS
+// NOTE: do not use these outside of _variables or _vars.scss
+$green: #31d57c;
+$blue: #00b8eb;
+$purple: #7c31f4;
+$yellow: #f5ff77; // NOT OFFICIAL COLOR
+$orange: #ffa147;
+$red: #f5403a;
+
+$white: #ffffff;
+$black: #000000;
+$gray-dark: #2f3735;
+$gray-medium: #4f5350;
+$gray: #9f9f9d;
+$gray-light: #cbcdcd;
+$gray-xlight: #eeefef;
+
+// COLOR DECLARATIONS
+// NOTE: use these for application variables
+$color-background: $white;
+$color-background-content: $gray-xlight;
+
+$color-background-navigation: $gray-dark; // Header & Sidebar Controls
+$color-background-sidebar: $gray-medium; // Sidebar Content
+
+$color-text-primary: $gray-dark;
+$color-text-secondary: $gray;
+$color-text-inverse-primary: $white; // Header and Sidebar
+$color-text-inverse-secondary: $gray-light; // Header and Sidebar
+$color-text-accent: $green;
+$color-text-accent2: $purple;
+$color-text-link: $blue;
+
+$color-state-success: $green;
+$color-state-neutral: $blue;
+$color-state-warning: $orange;
+$color-state-danger: $red;
+$color-state-null: $gray;
+$color-state-accent: $purple;
+
+$color-divider: mix($gray-medium, $white, 20%);
+$color-divider-inverse: rgba($white, 0.1);
+
+$color-hover-overlay: rgba($gray, 0.3);
+$color-hover-overlay-inverse: rgba($gray-dark, 0.3);
+$color-hover-link: mix($black, $color-text-link, 30%);
+$color-hover-link-inverse: mix($white, $color-text-link, 40%);
+$color-hover-list: mix($color-text-link, $white, 5%);
+
+$states: (
+  success: (
+    $color-state-success,
+  ),
+  warning: (
+    $color-state-warning,
+  ),
+  danger: (
+    $color-state-danger,
+  ),
+  primary: (
+    $color-state-neutral,
+  ),
+  accent: (
+    $color-text-accent2,
+  ),
+);
+
+// Space
+$gridUnit: 1rem;
+$space-quarterx: $gridUnit / 4; // 4px
+$space-halfx: $gridUnit / 2; // 8px
+$space-1x: $gridUnit; // 16px
+$space-1halfx: $gridUnit * 1.5; // 24px;
+$space-2x: $gridUnit * 2; // 32px
+$space-3x: $gridUnit * 4; // 64px
+
+// FONT DECLARATIONS
+$font-body: 'Proxima Nova', Arial, sans-serif;
+$font-body-size: initial;
+$font-body-weight: 400;
+
+input,
+textarea {
+  font-size: 1rem;
+  line-height: var(--lh-medium);
+}
+
+.docAttributes-builder {
+  grid-template-columns: 2fr 1fr 1fr 1fr minmax(60px, min-content);
+}

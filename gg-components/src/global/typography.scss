@@ -1,0 +1,79 @@
+// LineHeight Scale
+$lh-small: 1rem; // 16px
+$lh-medium: 1.5rem; // 24px
+$lh-large: 3rem; // 48px
+
+$fontSizes-map: (
+  h2: (
+    'fontSize': 2.625rem,
+    'lineHeight': $lh-large,
+    'fontWeight': 700,
+  ),
+  h3: (
+    'fontSize': 1.625rem,
+    'lineHeight': $lh-large,
+    'fontWeight': 700,
+  ),
+  h4: (
+    'fontSize': 1rem,
+    'lineHeight': $lh-medium,
+    'fontWeight': 700,
+    'letterSpacing': 0.1ch,
+    'textTransform': uppercase,
+  ),
+  paragraph: (
+    'fontSize': 1rem,
+    'lineHeight': $lh-medium,
+  ),
+  small: (
+    'fontSize': 0.875rem,
+    'lineHeight': $lh-medium,
+  ),
+  xsmall: (
+    'fontSize': 0.75rem,
+    'lineHeight': $lh-small,
+    'fontWeight': 700,
+    'letterSpacing': 0.1ch,
+    'textTransform': uppercase,
+  ),
+  tableHeading: (
+    'fontSize': 1rem,
+    'lineHeight': $lh-medium,
+    'fontWeight': 700,
+    'fontColor': $color-text-secondary,
+  ),
+);
+
+@each $size, $map in $fontSizes-map {
+  $fontSize: map-get($map, fontSize);
+  $lineHeight: map-get($map, lineHeight);
+  $fontWeight: map-get($map, fontWeight);
+  $fontColor: map-get($map, fontColor);
+  $letterSpacing: map-get($map, letterSpacing);
+  $textTransform: map-get($map, textTransform);
+
+  .fontSize-#{$size} {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-weight: $fontWeight;
+    color: $fontColor;
+    letter-spacing: $letterSpacing;
+    text-transform: $textTransform;
+  }
+}
+
+html {
+  font-family: $font-body;
+  @extend .fontSize-paragraph;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+textarea {
+  @extend .fontSize-paragraph;
+  font-family: $font-body;
+  color: $color-text-primary;
+  width: 100%;
+}

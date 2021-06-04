@@ -1,0 +1,123 @@
+$inputBorderWidth: 0.125rem;
+$rowBorderWidth: 0.063rem;
+
+$inline-top-padding: $space-quarterx;
+$inline-top-margin: (-$inline-top-padding);
+
+$inline-right-padding: $space-quarterx;
+$inline-right-margin: 0;
+
+$inline-bottom-padding: $space-quarterx;
+$inline-bottom-margin: (-$inline-bottom-padding);
+
+$inline-left-padding: $space-halfx;
+$inline-left-margin: (-$inline-left-padding);
+
+.inputInline {
+  margin: $inline-top-margin $inline-right-margin $inline-bottom-margin $inline-left-margin;
+  padding-right: $space-halfx;
+  position: relative;
+
+  & strong input {
+    font-weight: bold;
+  }
+  input[type='text'] {
+    border: none;
+    padding: $inline-top-padding $inline-right-padding $inline-bottom-padding $inline-left-padding;
+
+    &:placeholder-shown {
+      background-color: $color-background-content;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // inputInline
+  &:before {
+    content: '';
+    width: $inputBorderWidth;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  // inputInline
+  &:hover {
+    &:before {
+      background-color: $color-text-secondary;
+    }
+
+    input[type='text'] {
+      background-color: $color-background-content;
+    }
+  }
+
+  // inputInline
+  &:focus-within {
+    &:before {
+      background-color: $color-text-link;
+    }
+
+    input[type='text'] {
+      background-color: $color-background-content;
+    }
+  }
+}
+
+// auto-grow-textarea
+.grow-wrap {
+  /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
+  display: grid;
+}
+
+.grow-wrap::after {
+  /* Note the weird space! Needed to preventy jumpy behavior */
+  content: attr(data-replicated-value) ' ';
+
+  /* This is how textarea text behaves */
+  white-space: pre-wrap;
+
+  /* Hidden from view, clicks, and screen readers */
+  visibility: hidden;
+}
+
+.grow-wrap > textarea {
+  /* You could leave this, but after a user resizes, then it ruins the auto sizing */
+  resize: none;
+
+  /* Firefox shows scrollbar on growth, you can hide like this. */
+  overflow: hidden;
+}
+
+.grow-wrap > textarea,
+.grow-wrap::after {
+  /* Identical styling required!! */
+  font: inherit;
+  border: none;
+  padding: $inline-top-padding $inline-right-padding $inline-bottom-padding $inline-left-padding;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  /* Place on top of each other */
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.grow-wrap > textarea {
+  &:focus,
+  &:hover,
+  &:placeholder-shown {
+    background-color: $color-background-content;
+  }
+  // background-color: $color-background-content;
+}
+
+.grow-wrap::after {
+  background-color: transparent;
+}

@@ -7,17 +7,19 @@
 
 ## Properties
 
-| Property    | Attribute    | Description | Type                                                                                                                         | Default                                                                                                                                                             |
-| ----------- | ------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `isEditing` | `is-editing` |             | `boolean`                                                                                                                    | `false`                                                                                                                                                             |
-| `item`      | --           |             | `{ displayName: string; id: string; lockable: boolean; obsolete: boolean; order: number; required: boolean; type: string; }` | `{     displayName: 'My First Attribute',     id: '1',     lockable: false,     obsolete: false,     order: 1,     required: false,     type: 'SINGLE_SELECT',   }` |
+| Property     | Attribute    | Description | Type      | Default     |
+| ------------ | ------------ | ----------- | --------- | ----------- |
+| `bold`       | `bold`       |             | `boolean` | `undefined` |
+| `identifier` | `identifier` |             | `string`  | `undefined` |
+| `isEditing`  | `is-editing` |             | `boolean` | `false`     |
+| `text`       | `text`       |             | `string`  | `undefined` |
 
 
 ## Events
 
-| Event             | Description | Type                                                                                                                                      |
-| ----------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `submitAttribute` |             | `CustomEvent<{ displayName: string; id: string; lockable: boolean; obsolete: boolean; order: number; required: boolean; type: string; }>` |
+| Event             | Description | Type                                         |
+| ----------------- | ----------- | -------------------------------------------- |
+| `submitAttribute` |             | `CustomEvent<{ id: string; text: string; }>` |
 
 
 ----------------------------------------------

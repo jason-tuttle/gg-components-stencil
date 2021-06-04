@@ -1,9 +1,0 @@
-:host {
-  min-width: 0;
-  word-break: break-word;
-  padding: var(--space-1x) var(--space-halfx);
-  font-size: 1rem;
-  line-height: var(--lh-medium);
-  font-weight: 700;
-  color: var(--color-text-secondary);
-}

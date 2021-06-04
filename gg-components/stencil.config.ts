@@ -1,8 +1,9 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'gg-components',
-  globalStyle: 'src/global/variables.css',
+  plugins: [sass({ injectGlobalPaths: ['src/global/variables.scss', 'src/global/typography.scss'] })],
   outputTargets: [
     {
       type: 'dist',
