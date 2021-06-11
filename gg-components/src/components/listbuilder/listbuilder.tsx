@@ -2,7 +2,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'gg-listbuilder',
-  styleUrl: './list-builder.scss',
+  styleUrl: 'listbuilder.scss',
   shadow: true,
 })
 export class ListBuilder {

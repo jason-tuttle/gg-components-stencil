@@ -96,7 +96,7 @@ declare namespace LocalJSX {
          */
         "isEditing"?: boolean;
         /**
-          * Custom event emitted on Enter key or "focusout"
+          * Custom event emitted on Enter keydown or focusout
           * @event InlineInput#submitText
           * @type {object}
           * @property {string} id - passed-in `identifier` property

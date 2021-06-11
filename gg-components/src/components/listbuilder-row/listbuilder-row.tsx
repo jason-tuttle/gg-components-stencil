@@ -2,7 +2,7 @@ import { Component, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'gg-listbuilder-row',
-  styleUrl: 'lb-row.scss',
+  styleUrl: 'listbuilder-row.scss',
   shadow: true,
 })
 export class ListBuilderRow {

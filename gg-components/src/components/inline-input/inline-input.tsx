@@ -8,7 +8,7 @@ import { Component, Element, Event, EventEmitter, Listen, Prop, State, h } from 
  */
 @Component({
   tag: 'gg-inline-input',
-  styleUrl: 'gg-inline-input.scss',
+  styleUrl: 'inline-input.scss',
   shadow: true,
 })
 export class InlineInput {
@@ -66,7 +66,7 @@ export class InlineInput {
   };
 
   /**
-   * Custom event emitted on Enter key or "focusout"
+   * Custom event emitted on Enter keydown or focusout
    * @event InlineInput#submitText
    * @type {object}
    * @property {string} id - passed-in `identifier` property

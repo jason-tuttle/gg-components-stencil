@@ -17,9 +17,9 @@
 
 ## Events
 
-| Event        | Description                                     | Type                                         |
-| ------------ | ----------------------------------------------- | -------------------------------------------- |
-| `submitText` | Custom event emitted on Enter key or "focusout" | `CustomEvent<{ id: string; text: string; }>` |
+| Event        | Description                                       | Type                                         |
+| ------------ | ------------------------------------------------- | -------------------------------------------- |
+| `submitText` | Custom event emitted on Enter keydown or focusout | `CustomEvent<{ id: string; text: string; }>` |
 
 
 ----------------------------------------------
