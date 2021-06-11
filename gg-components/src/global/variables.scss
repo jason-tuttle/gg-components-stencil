@@ -81,7 +81,3 @@ $space-3x: $gridUnit * 4; // 64px
 $font-body: 'Proxima Nova', Arial, sans-serif;
 $font-body-size: initial;
 $font-body-weight: 400;
-
-.docAttributes-builder {
-  grid-template-columns: 2fr 1fr 1fr 1fr minmax(60px, min-content);
-}

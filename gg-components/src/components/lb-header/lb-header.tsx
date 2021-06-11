@@ -1,11 +1,11 @@
 import { Component, h, Host } from '@stencil/core';
 
 @Component({
-  tag: 'lb-header',
+  tag: 'gg-listbuilder-header',
   styleUrl: './lb-header.scss',
   shadow: true,
 })
-export class LbHeader {
+export class ListBuilderHeader {
   render() {
     return (
       <Host class="ds-gridTable--header">
