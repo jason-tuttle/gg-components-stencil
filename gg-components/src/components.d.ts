@@ -7,9 +7,21 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface GgInlineInput {
+        /**
+          * apply bold style the text of the input and display
+         */
         "bold"?: boolean;
+        /**
+          * unique identifier for the input, should be `id` of model containing the text
+         */
         "identifier"?: string;
+        /**
+          * the element is in "edit mode"
+         */
         "isEditing": boolean;
+        /**
+          * the original text value of the input
+         */
         "text"?: string;
     }
     interface LbHeader {
@@ -71,10 +83,29 @@ declare global {
 }
 declare namespace LocalJSX {
     interface GgInlineInput {
+        /**
+          * apply bold style the text of the input and display
+         */
         "bold"?: boolean;
+        /**
+          * unique identifier for the input, should be `id` of model containing the text
+         */
         "identifier"?: string;
+        /**
+          * the element is in "edit mode"
+         */
         "isEditing"?: boolean;
-        "onSubmitAttribute"?: (event: CustomEvent<{ id: string; text: string }>) => void;
+        /**
+          * Custom event emitted on Enter key or "focusout"
+          * @event InlineInput#submitText
+          * @type {object}
+          * @property {string} id - passed-in `identifier` property
+          * @property {string} text - current value of the input element
+         */
+        "onSubmitText"?: (event: CustomEvent<{ id: string; text: string }>) => void;
+        /**
+          * the original text value of the input
+         */
         "text"?: string;
     }
     interface LbHeader {

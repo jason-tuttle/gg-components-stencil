@@ -71,7 +71,8 @@ html {
 }
 
 input,
-textarea {
+textarea,
+span {
   @extend .fontSize-paragraph;
   font-family: $font-body;
   color: $color-text-primary;

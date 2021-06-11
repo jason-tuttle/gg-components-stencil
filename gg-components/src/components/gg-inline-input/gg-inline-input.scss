@@ -67,6 +67,14 @@ $inline-left-margin: (-$inline-left-padding);
     }
   }
 }
+span {
+  font-size: 1rem;
+  line-height: $lh-medium;
+  padding: $inline-top-padding $inline-right-padding $inline-bottom-padding $inline-left-padding;
+  &.bold {
+    font-weight: bold;
+  }
+}
 
 // auto-grow-textarea
 .grow-wrap {
